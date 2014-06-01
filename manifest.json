@@ -13,7 +13,8 @@
 		"scripts": ["background.js"]
 	},
 	"permissions": [
-		"http://maximum.ru/*"
+		"http://maximum.ru/*",
+		"storage"
 	],
 
 	"browser_action": {
