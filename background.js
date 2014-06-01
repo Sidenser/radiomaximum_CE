@@ -1,10 +1,10 @@
 (function(){
     var audio = document.createElement('audio');
-    audio.src = 'http://maximum.fmtuner.ru/';
     chrome.extension.onMessage.addListener( function(request,sender,sendResponse)
     {
         if( request.greeting == "Play" )
         {
+			audio.src = 'http://maximum.fmtuner.ru/';
             audio.play();
         }
         else if( request.greeting == "Stop" )
