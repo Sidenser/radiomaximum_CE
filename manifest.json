@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "RadioMaximum",
-	"version": "0.1",
+	"version": "0.1.5",
 
 	"icons": {
         "16": "logo.png",
@@ -10,16 +10,24 @@
 		"128": "logo.png"
 	},
 	"background": {
-		"scripts": ["background.js"]
+		"scripts": [
+			"track.js",
+			"db.js",
+			"background.js"
+		]
 	},
 	"permissions": [
 		"http://maximum.ru/*",
-		"storage"
+		"storage",
+		"notifications"
 	],
 
 	"browser_action": {
 		"default_title": "RadioMaximum",
 		"default_icon": "logo.png",
 		"default_popup": "popup.html"
-	}
+	},
+	"web_accessible_resources":[
+        "logo.png"
+    ]
 }

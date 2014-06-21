@@ -10,7 +10,7 @@ class Player
 		@audio.play()
 		@saveStatus "play"
 	stop:()->
-		@audio.stop()
+		@audio.pause()
 		@saveStatus "stop"
 	command:(c)->
 		if @[c]? 
@@ -21,3 +21,15 @@ class Player
 player = new Player("http://maximum.fmtuner.ru/")
 chrome.extension.onMessage.addListener (request) ->
 	player.command request.greeting
+
+
+
+showNotification = ()->
+	opt = 
+		type: "basic", 
+		title: "Primary Title",
+		message: "Primary message to display",
+		iconUrl: "logo.png"	
+	chrome.notifications.create "2", opt, ()-> 
+
+
