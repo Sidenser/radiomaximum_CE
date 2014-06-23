@@ -8,15 +8,13 @@
     function Database(name, v, description, size) {
       this.db = openDatabase(name, v, description, size);
       this.db.transaction(function(tx) {
-        return tx.executeSql("SELECT COUNT(*) FROM history", [], (function(result) {}), (function(tx, error) {
-          return tx.executeSql("CREATE TABLE history (id REAL UNIQUE, label TEXT, timestamp REAL)");
-        }));
+        return tx.executeSql("CREATE TABLE IF NOT EXISTS history (name TEXT UNIQUE, timestamp REAL)");
       });
     }
 
     Database.prototype.addItemHistory = function(name) {
       return this.db.transaction(function(tx) {
-        return tx.executeSql("INSERT INTO history (label, timestamp) values(?, ?)", [name, new Date().getTime()], null, null);
+        return tx.executeSql("INSERT INTO history (name, timestamp) values(?, ?)", [name, new Date().getTime()], null, null);
       });
     };
 

@@ -4,7 +4,7 @@ class Player
 	constructor:(url)->
 		@saveStatus "stop"
 		@srcAudio = url
-		@audio = document.createElement("audio")
+		@audio = new Audio
 	play:()->
 		@audio.src = @srcAudio
 		@audio.play()
