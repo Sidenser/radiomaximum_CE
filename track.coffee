@@ -12,7 +12,7 @@ class Track
 			@loadTrack xhr.responseText.replace(/<\/?[^>]+>/g,'')
 		xhr.send()
 	loadTrack:(text)->
-		localStorage["currentTrack"] = text
+		localStorage.currentTrack = text
 		window.dataBase.addItemHistory  text
 
 track = new Track

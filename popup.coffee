@@ -1,20 +1,16 @@
-btnPlay = document.getElementById("play")
-btnStop = document.getElementById("stop")
-btnPlay.onclick = ()->
-    chrome.extension.sendMessage greeting: "play"
-    btnShow "play"
-
-btnStop.onclick = ()->
-    chrome.extension.sendMessage greeting: "stop"
-    btnShow "stop"
+btn = document.getElementById("btn")
+btn.onclick = ()->
+	status = if localStorage.status is "play" then "stop" else "play"
+	chrome.extension.sendMessage greeting: status
+	btnShow status
 
 btnShow = (status)->
 	if status is "play"
-		btnPlay.style.display = "none"
-		btnStop.style.display = "block"
+		btn.firstChild.className = "icon-pause"
 	else
-		btnPlay.style.display = "block"
-		btnStop.style.display = "none"
+		btn.firstChild.className = "icon-play"
 	true
 
-btnShow localStorage["status"] 
+btnShow localStorage["status"]
+
+document.getElementById("track-name").innerHTML = localStorage.currentTrack

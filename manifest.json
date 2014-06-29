@@ -4,9 +4,9 @@
 	"version": "0.1.5",
 
 	"icons": {
-        "16": "logo.png",
-        "32": "logo.png",
-        "48": "logo.png",
+		"16": "logo.png",
+		"32": "logo.png",
+		"48": "logo.png",
 		"128": "logo.png"
 	},
 	"background": {
@@ -28,6 +28,6 @@
 		"default_popup": "popup.html"
 	},
 	"web_accessible_resources":[
-        "logo.png"
-    ]
+		"logo.png"
+	]
 }

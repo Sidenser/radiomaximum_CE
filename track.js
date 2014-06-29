@@ -5,7 +5,7 @@
   Track = (function() {
     Track.prototype.urlUpdate = "";
 
-    Track.prototype.timeUpdate = 20000;
+    Track.prototype.timeUpdate = 120000;
 
     function Track() {
       setInterval(((function(_this) {
@@ -30,7 +30,7 @@
     };
 
     Track.prototype.loadTrack = function(text) {
-      localStorage["currentTrack"] = text;
+      localStorage.currentTrack = text;
       return window.dataBase.addItemHistory(text);
     };
 
