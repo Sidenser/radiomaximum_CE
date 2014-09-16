@@ -1,21 +1,20 @@
 class Track
-	urlUpdate:""
-	timeUpdate:20000
+	urlUpdate:"http://maximum.ru/getcurrenttrack.aspx?random="
+	defaultTrackName:"MAXIMUM"
+	timeUpdate:200000
 	constructor:()->
 		setInterval (=> @update()), @timeUpdate
 	update:()->
-		@urlUpdate = "http://maximum.ru/getcurrenttrack.aspx?random="+ Math.random()
+		urlUpdate = @urlUpdate + Math.random()
 		xhr = new XMLHttpRequest;
-		xhr.open "GET", @urlUpdate, true
+		xhr.open "GET", urlUpdate, true
 		xhr.onload = ()=>
-			console.log @
 			@loadTrack xhr.responseText.replace(/<\/?[^>]+>/g,'')
 		xhr.send()
-	loadTrack:(text)->
+	loadTrack:(text = @defaultTrackName)->
+		console.log(text)
 		localStorage.currentTrack = text
 		window.dataBase.addItemHistory  text
 
 track = new Track
-
-
 

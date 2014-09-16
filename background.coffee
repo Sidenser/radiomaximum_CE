@@ -22,8 +22,6 @@ player = new Player("http://maximum.fmtuner.ru/")
 chrome.extension.onMessage.addListener (request) ->
 	player.command request.greeting
 
-
-
 showNotification = ()->
 	opt = 
 		type: "basic", 
@@ -31,5 +29,3 @@ showNotification = ()->
 		message: "Primary message to display",
 		iconUrl: "logo.png"	
 	chrome.notifications.create "2", opt, ()-> 
-
-

@@ -2,7 +2,7 @@
 	font-family: 'fontello';
 	src: url('font/fontello.woff?40425157') format('woff');
 	font-weight: normal;
-	font-style: normal;
+    font-style: normal;
 }
 
 [class^="icon-"]:before, [class*=" icon-"]:before 

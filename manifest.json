@@ -21,7 +21,7 @@
 		"storage",
 		"notifications"
 	],
-
+	"options_page": "options/options.html",
 	"browser_action": {
 		"default_title": "RadioMaximum",
 		"default_icon": "logo.png",
