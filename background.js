@@ -10,6 +10,8 @@ Player = (function() {
     this.saveStatus("stop");
     this.srcAudio = url;
     this.audio = new Audio;
+    localStorage["volumeMute"] = "false";
+    localStorage["volume"] = 100;
   }
 
   Player.prototype.play = function() {
@@ -31,6 +33,14 @@ Player = (function() {
 
   Player.prototype.saveStatus = function(val) {
     return localStorage["status"] = val;
+  };
+
+  Player.prototype.volumeMute = function() {
+    return this.audio.muted = !this.audio.muted;
+  };
+
+  Player.prototype.setVolume = function() {
+    return this.audio.volume = parseFloat(localStorage["volume"]) * 0.01;
   };
 
   return Player;

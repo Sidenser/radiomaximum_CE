@@ -28,7 +28,13 @@
 .icon-volume-off:before { content: '\e803'; }
 .icon-play:before { content: '\e804'; }
 .icon-pause:before { content: '\e805'; }
-
+*{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
 body
 {
 	margin: 0;
@@ -39,16 +45,16 @@ body
 	background: -o-linear-gradient(90deg, rgb(160, 160, 160) 0%, rgb(90, 96, 96) 100%);
 	background: -ms-linear-gradient(90deg, rgb(160, 160, 160) 0%, rgb(90, 96, 96) 100%);
 	background: linear-gradient(180deg, rgb(160, 160, 160) 0%, rgb(90, 96, 96) 100%);}
-.conteiner
+.container
 {
 	position: relative;
 	width: 300px;
-	height: 40px;
+	height: 55px;
 }
-.conteiner .btn
+.container .btn
 {
-	width: 38px;
-	height: 38px;
+	width: 50px;
+	height: 50px;
 	border: none;
 	position: absolute;
 	right: 1px;
@@ -71,10 +77,10 @@ body
 	-moz-box-shadow:    0px 2px 1px rgba(50, 50, 50, 0.75);
 	box-shadow:         0px 2px 1px rgba(50, 50, 50, 0.75);
 }
-.conteiner .track-name
+.container .track-name
 {
 	line-height: 40px;
-	height: 40px;
+	height: 50px;
 	position: absolute;
 	left: 5px;
 	top: 0px;
@@ -83,4 +89,32 @@ body
 	font-size: 10px;
 	font-weight: bold;
 	overflow: hidden;
+}
+.container .btn-volume
+{
+	position: absolute;
+	left: 140px;
+	top: 35px;
+	color: #ccc;
+	cursor: pointer;
+}
+
+.container .volume-bar
+{
+	left: 165px;
+	top:38px;
+	position: absolute;
+	width: 70px;
+	height: 10px;
+	border: silver solid 1px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	background: black;
+	cursor: pointer;
+}
+.container .volume-bar .progress
+{
+	background: #ccc;
+	height: 10px;
+	width: 50%;
 }

@@ -17,4 +17,3 @@ class Track
 		window.dataBase.addItemHistory  text
 
 track = new Track
-

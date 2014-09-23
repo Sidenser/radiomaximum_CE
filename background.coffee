@@ -5,6 +5,8 @@ class Player
 		@saveStatus "stop"
 		@srcAudio = url
 		@audio = new Audio
+		localStorage["volumeMute"] = "false"
+		localStorage["volume"] = 100
 	play:()->
 		@audio.src = @srcAudio
 		@audio.play()
@@ -17,6 +19,10 @@ class Player
 			@[c]()
 	saveStatus:(val)->
 		localStorage["status"] = val
+	volumeMute:()->
+		@audio.muted = !@audio.muted
+	setVolume:()->
+		@audio.volume = parseFloat(localStorage["volume"]) * 0.01;
 
 player = new Player("http://maximum.fmtuner.ru/")
 chrome.extension.onMessage.addListener (request) ->
